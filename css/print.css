@@ -357,3 +357,103 @@
     }
 }
 
+/* Print responsive styles for mobile devices */
+@media print and (max-width: 768px) {
+    .reveal .slides section {
+        padding: 15px !important;
+        margin: 0 0 30px 0 !important;
+    }
+
+    .title-content h1 {
+        font-size: 22pt !important;
+    }
+
+    .title-content h2 {
+        font-size: 16pt !important;
+    }
+
+    .reveal h1 {
+        font-size: 20pt !important;
+    }
+
+    .reveal h2 {
+        font-size: 16pt !important;
+    }
+
+    .title-stats {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+
+    .threat-stats {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .maturity-stages {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .stage {
+        margin: 0 0 12px 0 !important;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 4px !important;
+    }
+
+    .timeline-duration {
+        min-width: auto !important;
+    }
+}
+
+@media print and (max-width: 480px) {
+    .reveal .slides section {
+        padding: 12px !important;
+        margin: 0 0 25px 0 !important;
+    }
+
+    .title-content h1 {
+        font-size: 18pt !important;
+    }
+
+    .title-content h2 {
+        font-size: 14pt !important;
+    }
+
+    .reveal h1 {
+        font-size: 16pt !important;
+    }
+
+    .reveal h2 {
+        font-size: 14pt !important;
+    }
+
+    .reveal h3 {
+        font-size: 12pt !important;
+    }
+
+    .reveal p {
+        font-size: 10pt !important;
+    }
+
+    .stat-number,
+    .big-number {
+        font-size: 16pt !important;
+    }
+
+    .agenda-item,
+    .threat-item,
+    .impact-item,
+    .control-category,
+    .framework-item,
+    .resource-category {
+        padding: 10px !important;
+        margin-bottom: 12px !important;
+    }
+}
+

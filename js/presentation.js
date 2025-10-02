@@ -22,6 +22,11 @@ Reveal.initialize({
     navigationMode: 'default',
     shuffle: false,
     
+    // Mobile-specific settings
+    embedded: false,
+    autoPlayMedia: null,
+    preloadIframes: null,
+    
     // Fragment settings
     fragments: true,
     fragmentInURL: false,
@@ -29,9 +34,9 @@ Reveal.initialize({
     // Presentation size
     width: 1920,
     height: 1080,
-    margin: 0.1,
-    minScale: 0.5,
-    maxScale: 1.5,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0,
     
     // Auto-slide settings (disabled for manual control)
     autoSlide: 0,
@@ -93,6 +98,118 @@ function updateSlideNumbers() {
         totalElement.textContent = totalSlides;
     }
 }
+
+// Mobile device detection and optimization
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function isTabletDevice() {
+    return /iPad|Android/i.test(navigator.userAgent) && window.innerWidth >= 768;
+}
+
+// Apply mobile-specific optimizations
+function applyMobileOptimizations() {
+    if (isMobileDevice()) {
+        document.body.classList.add('mobile-device');
+        
+        // Disable mouse wheel on mobile
+        Reveal.configure({
+            mouseWheel: false,
+            touch: true
+        });
+        
+        // Add touch gesture hints for first-time users
+        addTouchHints();
+    }
+    
+    if (isTabletDevice()) {
+        document.body.classList.add('tablet-device');
+    }
+}
+
+// Add touch gesture hints
+function addTouchHints() {
+    const firstSlide = document.querySelector('.slides section:first-child');
+    if (firstSlide && !localStorage.getItem('touch-hints-shown')) {
+        const hintElement = document.createElement('div');
+        hintElement.className = 'touch-hints';
+        hintElement.innerHTML = `
+            <div class="touch-hint">
+                <i class="fas fa-hand-point-right"></i>
+                <span>Swipe to navigate slides</span>
+            </div>
+        `;
+        hintElement.style.cssText = `
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: rgba(30, 64, 175, 0.9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: fadeInOut 4s ease-in-out;
+        `;
+        
+        document.body.appendChild(hintElement);
+        
+        // Remove hint after 4 seconds
+        setTimeout(() => {
+            if (hintElement.parentNode) {
+                hintElement.parentNode.removeChild(hintElement);
+            }
+            localStorage.setItem('touch-hints-shown', 'true');
+        }, 4000);
+    }
+}
+
+// Handle device orientation changes
+function handleOrientationChange() {
+    setTimeout(() => {
+        Reveal.layout();
+    }, 500);
+}
+
+// Add CSS animation for touch hints
+function addTouchHintStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+        
+        .touch-hint {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .mobile-device .slide-footer {
+            padding: 0 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .tablet-device .reveal .slides section {
+            padding: 2rem 3rem;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize mobile optimizations
+document.addEventListener('DOMContentLoaded', function() {
+    addTouchHintStyles();
+    applyMobileOptimizations();
+});
+
+// Handle orientation changes
+window.addEventListener('orientationchange', handleOrientationChange);
+window.addEventListener('resize', handleOrientationChange);
 
 // Add speaker notes content for each slide
 const speakerNotes = {

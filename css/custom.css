@@ -756,25 +756,265 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .reveal .slides section {
+        padding: 2rem 3rem;
+    }
+    
+    .resources-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .maturity-stages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .threat-grid {
-        grid-template-columns: 1fr;
+    .reveal .slides section {
+        padding: 1.5rem 2rem;
     }
     
-    .decision-framework {
-        grid-template-columns: 1fr;
+    /* Typography adjustments */
+    .reveal h1 {
+        font-size: 2.5rem;
     }
     
-    .controls-container {
-        grid-template-columns: 1fr;
+    .reveal h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
     
+    .reveal h3 {
+        font-size: 1.3rem;
+    }
+    
+    .reveal p {
+        font-size: 1rem;
+    }
+    
+    /* Title slide mobile */
     .title-content h1 {
         font-size: 2.5rem;
     }
     
     .title-content h2 {
         font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .title-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Grid layouts to single column */
+    .threat-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .decision-framework {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .controls-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .resources-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .sources-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Threat stats mobile */
+    .threat-stats {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .big-number {
+        font-size: 2.5rem;
+    }
+    
+    /* Maturity stages mobile */
+    .maturity-stages {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Impact items mobile */
+    .impact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .impact-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Agenda items mobile */
+    .agenda-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .agenda-number {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Navigation controls mobile */
+    .reveal .controls {
+        bottom: 80px !important;
+        right: 15px !important;
+    }
+    
+    .reveal .controls button {
+        width: 44px !important;
+        height: 44px !important;
+        border-width: 1.5px !important;
+    }
+    
+    /* Footer mobile */
+    .slide-footer {
+        padding: 0 1rem;
+        font-size: 0.8rem;
+        flex-direction: column;
+        height: 60px;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+    
+    .reveal .progress {
+        bottom: 60px !important;
+    }
+    
+    /* Contact details mobile */
+    .contact-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reveal .slides section {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Further reduce font sizes */
+    .title-content h1 {
+        font-size: 2rem;
+    }
+    
+    .title-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .reveal h2 {
+        font-size: 1.8rem;
+    }
+    
+    .reveal h3 {
+        font-size: 1.2rem;
+    }
+    
+    .big-number {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    /* Compact cards */
+    .threat-item,
+    .control-category,
+    .framework-item,
+    .agenda-item {
+        padding: 1.25rem;
+    }
+    
+    .impact-item {
+        padding: 1.25rem;
+    }
+    
+    /* Navigation controls small mobile */
+    .reveal .controls {
+        bottom: 70px !important;
+        right: 10px !important;
+    }
+    
+    .reveal .controls button {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    /* Smaller icons */
+    .threat-icon i,
+    .impact-icon i {
+        font-size: 2rem;
+    }
+    
+    .framework-item h3 i,
+    .control-category h3 i {
+        font-size: 1.3rem;
+    }
+    
+    /* Timeline adjustments */
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .timeline-duration {
+        min-width: auto;
+        font-weight: 600;
+    }
+}
+
+/* Touch-friendly interactive elements */
+@media (hover: none) and (pointer: coarse) {
+    .agenda-item:hover,
+    .threat-item:hover,
+    .impact-item:hover,
+    .control-category:hover,
+    .framework-item:hover {
+        transform: none;
+    }
+    
+    .agenda-item:active,
+    .threat-item:active,
+    .impact-item:active,
+    .control-category:active,
+    .framework-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
     }
 }
 
@@ -826,8 +1066,53 @@
 /* Navigation Controls */
 .reveal .controls {
     color: var(--primary-color);
+    bottom: 70px !important; /* Move above footer */
+    right: 20px !important;
 }
 
 .reveal .controls button {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3) !important;
+    transition: all 0.3s ease !important;
+    opacity: 0.9 !important;
+}
+
+.reveal .controls button:hover {
+    background: var(--primary-color) !important;
+    color: white !important;
+    transform: scale(1.1) !important;
+    opacity: 1 !important;
+    box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4) !important;
+}
+
+.reveal .controls button:focus {
+    outline: 3px solid var(--accent-light) !important;
+    outline-offset: 2px !important;
+}
+
+/* Ensure arrows are visible on all backgrounds */
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-down {
+    border-color: var(--primary-color) !important;
+}
+
+.reveal .controls .navigate-left.enabled,
+.reveal .controls .navigate-right.enabled,
+.reveal .controls .navigate-up.enabled,
+.reveal .controls .navigate-down.enabled {
+    opacity: 0.9 !important;
+}
+
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-down.enabled:hover {
+    opacity: 1 !important;
 }
