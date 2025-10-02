@@ -1,0 +1,359 @@
+/* Print-specific styles for Cybersecurity Presentation */
+
+@media print {
+    /* Reset reveal.js styles for print */
+    .reveal {
+        width: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    .reveal .slides {
+        width: auto !important;
+        height: auto !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        zoom: 1 !important;
+        position: relative !important;
+    }
+
+    .reveal .slides section {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 20px !important;
+        margin: 0 0 40px 0 !important;
+        page-break-inside: avoid;
+        page-break-after: auto;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        overflow: visible !important;
+        background: white !important;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    /* Page breaks */
+    .reveal .slides section:not(:last-child) {
+        page-break-after: always;
+    }
+
+    /* Hide elements not needed for print */
+    .reveal .progress,
+    .reveal .controls,
+    .slide-footer,
+    .reveal .backgrounds {`
+        display: none !important;
+    }
+
+    /* Typography adjustments for print */
+    .reveal h1, .reveal h2, .reveal h3 {
+        color: #1e40af !important;
+        margin-bottom: 16px !important;
+    }
+
+    .reveal h1 {
+        font-size: 24pt !important;
+        margin-bottom: 20px !important;
+    }
+
+    .reveal h2 {
+        font-size: 20pt !important;
+        margin-bottom: 16px !important;
+    }
+
+    .reveal h3 {
+        font-size: 14pt !important;
+        margin-bottom: 12px !important;
+    }
+
+    .reveal p {
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+        color: #374151 !important;
+    }
+
+    /* Title slide adjustments */
+    .title-slide {
+        background: white !important;
+        color: #1e40af !important;
+        text-align: center !important;
+        border: 2px solid #1e40af !important;
+        margin-bottom: 40px !important;
+    }
+
+    .title-content h1,
+    .title-content h2 {
+        color: #1e40af !important;
+    }
+
+    .title-content h1 {
+        font-size: 28pt !important;
+        margin-bottom: 12px !important;
+    }
+
+    .title-content h2 {
+        font-size: 20pt !important;
+        margin-bottom: 16px !important;
+    }
+
+    .subtitle {
+        font-size: 12pt !important;
+        color: #6b7280 !important;
+        font-style: italic !important;
+        margin-bottom: 20px !important;
+    }
+
+    .presenter-info p {
+        font-size: 11pt !important;
+        color: #374151 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Statistics layout for print */
+    .title-stats {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        margin-top: 20px !important;
+        border-top: 1px solid #e2e8f0 !important;
+        padding-top: 20px !important;
+    }
+
+    .stat-item {
+        text-align: center !important;
+    }
+
+    .stat-number {
+        display: block !important;
+        font-size: 18pt !important;
+        font-weight: bold !important;
+        color: #1e40af !important;
+        margin-bottom: 4px !important;
+    }
+
+    .stat-label {
+        font-size: 10pt !important;
+        color: #6b7280 !important;
+    }
+
+    /* Grid layouts for print */
+    .agenda-container,
+    .threat-grid,
+    .impact-list,
+    .controls-container,
+    .decision-framework,
+    .resources-container {
+        display: block !important;
+        margin: 16px 0 !important;
+    }
+
+    .agenda-item,
+    .threat-item,
+    .impact-item,
+    .control-category,
+    .framework-item,
+    .resource-category {
+        display: block !important;
+        margin-bottom: 16px !important;
+        padding: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+        background: #f8fafc !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Icons in print */
+    .threat-icon,
+    .impact-icon,
+    .agenda-number {
+        display: inline-block !important;
+        margin-right: 8px !important;
+        color: #1e40af !important;
+        font-size: 14pt !important;
+    }
+
+    .agenda-number {
+        background: #1e40af !important;
+        color: white !important;
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: bold !important;
+        font-size: 10pt !important;
+        margin-right: 12px !important;
+        float: left !important;
+        margin-top: 2px !important;
+    }
+
+    /* Statistics sections */
+    .threat-stats {
+        display: flex !important;
+        justify-content: space-around !important;
+        margin: 16px 0 !important;
+        padding: 12px !important;
+        background: #f1f5f9 !important;
+        border-radius: 6px !important;
+    }
+
+    .threat-stat {
+        text-align: center !important;
+    }
+
+    .big-number {
+        display: block !important;
+        font-size: 20pt !important;
+        font-weight: bold !important;
+        color: #1e40af !important;
+        margin-bottom: 4px !important;
+    }
+
+    .stat-description {
+        font-size: 10pt !important;
+        color: #6b7280 !important;
+    }
+
+    /* Details and effectiveness badges */
+    .threat-detail,
+    .control-detail,
+    .framework-detail,
+    .impact-stat {
+        font-size: 9pt !important;
+        color: #6b7280 !important;
+        margin-top: 8px !important;
+        padding-top: 8px !important;
+        border-top: 1px solid #e2e8f0 !important;
+    }
+
+    .effectiveness {
+        background: #1e40af !important;
+        color: white !important;
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+        font-size: 8pt !important;
+        display: inline-block !important;
+        margin-top: 8px !important;
+    }
+
+    /* Timeline */
+    .impact-timeline {
+        background: #f8fafc !important;
+        padding: 12px !important;
+        border-radius: 6px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .timeline-item {
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 6px 0 !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none !important;
+    }
+
+    .timeline-duration {
+        font-weight: bold !important;
+        color: #1e40af !important;
+        min-width: 80px !important;
+    }
+
+    /* Maturity stages */
+    .maturity-stages {
+        display: flex !important;
+        justify-content: space-between !important;
+        margin: 16px 0 !important;
+    }
+
+    .stage {
+        flex: 1 !important;
+        text-align: center !important;
+        margin: 0 8px !important;
+        padding: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+    }
+
+    .stage-number {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 50% !important;
+        background: #1e40af !important;
+        color: white !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: bold !important;
+        margin: 0 auto 8px !important;
+        font-size: 10pt !important;
+    }
+
+    /* Action grid */
+    .action-grid {
+        display: block !important;
+    }
+
+    .action-item {
+        margin-bottom: 12px !important;
+        padding: 12px !important;
+        border-left: 4px solid #1e40af !important;
+        background: #f8fafc !important;
+    }
+
+    /* Special sections */
+    .key-insight,
+    .real-example,
+    .implementation-note {
+        background: #fef3c7 !important;
+        border: 1px solid #f59e0b !important;
+        padding: 12px !important;
+        border-radius: 6px !important;
+        margin: 16px 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    .contact-info {
+        background: #1e40af !important;
+        color: white !important;
+        padding: 16px !important;
+        border-radius: 6px !important;
+        text-align: center !important;
+        margin-top: 20px !important;
+    }
+
+    .contact-info h3 {
+        color: white !important;
+        margin-bottom: 12px !important;
+    }
+
+    .contact-info p {
+        color: white !important;
+        margin: 0 !important;
+    }
+
+    /* Resource lists */
+    .resource-category ul,
+    .resources-container ul {
+        list-style-type: disc !important;
+        padding-left: 20px !important;
+        margin: 8px 0 !important;
+    }
+
+    .resource-category li {
+        margin-bottom: 6px !important;
+        font-size: 10pt !important;
+        line-height: 1.3 !important;
+    }
+}
+

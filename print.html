@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Essentials: Strategic Insights for Leadership - Print Version</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Print-optimized styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12pt;
+            line-height: 1.4;
+            color: #374151;
+            background: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .print-page {
+            page-break-after: always;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .print-page:last-child {
+            page-break-after: auto;
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            color: #1e40af;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 24pt;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20pt;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 14pt;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* Title page */
+        .title-page {
+            text-align: center;
+            border: 2px solid #1e40af;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        .title-page h1 {
+            font-size: 28pt;
+            margin-bottom: 12px;
+        }
+
+        .title-page h2 {
+            font-size: 20pt;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .presenter-info {
+            font-size: 11pt;
+            margin-bottom: 20px;
+        }
+
+        .title-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 10pt;
+            color: #6b7280;
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: #f8fafc;
+            page-break-inside: avoid;
+        }
+
+        .content-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .content-section i {
+            color: #1e40af;
+            width: 16px;
+        }
+
+        /* Statistics */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 16px 0;
+            padding: 12px;
+            background: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .big-number {
+            display: block;
+            font-size: 20pt;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 4px;
+        }
+
+        .stat-description {
+            font-size: 10pt;
+            color: #6b7280;
+        }
+
+        /* Timeline */
+        .timeline {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-duration {
+            font-weight: bold;
+            color: #1e40af;
+            min-width: 80px;
+        }
+
+        /* Maturity stages */
+        .maturity-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 16px 0;
+            gap: 8px;
+        }
+
+        .stage {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+
+        .stage-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1e40af;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 8px;
+            font-size: 10pt;
+        }
+
+        /* Special sections */
+        .highlight-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+
+        .blue-box {
+            background: #1e40af;
+            color: white;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+
+        .blue-box h3 {
+            color: white;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 10pt;
+            line-height: 1.3;
+        }
+
+        /* Details */
+        .detail {
+            font-size: 9pt;
+            color: #6b7280;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .badge {
+            background: #1e40af;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 8pt;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* Action items */
+        .action-item {
+            margin-bottom: 12px;
+            padding: 12px;
+            border-left: 4px solid #1e40af;
+            background: #f8fafc;
+        }
+
+        .screen-only {
+            display: none;
+        }
+
+        @media print {
+            .screen-only {
+                display: none !important;
+            }
+            
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="screen-only" style="display: block; text-align: center; padding: 20px; background: #f1f5f9; margin-bottom: 20px;">
+        <p><strong>Print-Optimized Version</strong> • This version is formatted specifically for printing • Press Ctrl/Cmd+P to print</p>
+    </div>
+
+    <!-- Slide 1: Title Page -->
+    <div class="print-page title-page">
+        <h1>Cybersecurity Essentials</h1>
+        <h2>Strategic Insights for Leadership</h2>
+        <p class="subtitle">Evidence-based guidance for informed security decisions and risk management</p>
+        <div class="presenter-info">
+            <p>MJ | Ability Matters | October 2025</p>
+        </div>
+        <div class="title-stats">
+            <div class="stat-item">
+                <span class="stat-number">$4.88M</span>
+                <span class="stat-label">Average breach cost</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">194 days</span>
+                <span class="stat-label">Average detection time</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">82%</span>
+                <span class="stat-label">Human error factor</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Agenda -->
+    <div class="print-page">
+        <h2>Today's Overview</h2>
+        
+        <div class="content-section">
+            <h3><span style="background: #1e40af; color: white; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10pt; margin-right: 8px;">1</span>Threat Landscape</h3>
+            <p>Common attack vectors and current trends</p>
+        </div>
+
+        <div class="content-section">
+            <h3><span style="background: #1e40af; color: white; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10pt; margin-right: 8px;">2</span>Business Impact</h3>
+            <p>Real costs and operational consequences</p>
+        </div>
+
+        <div class="content-section">
+            <h3><span style="background: #1e40af; color: white; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10pt; margin-right: 8px;">3</span>Control Categories</h3>
+            <p>Framework approaches and considerations</p>
+        </div>
+
+        <div class="content-section">
+            <h3><span style="background: #1e40af; color: white; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10pt; margin-right: 8px;">4</span>Strategic Decisions</h3>
+            <p>Leadership frameworks and next steps</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Threat Landscape -->
+    <div class="print-page">
+        <h2>Current Threat Landscape</h2>
+        
+        <div class="stats-row">
+            <div class="stat-box">
+                <span class="big-number">36%</span>
+                <span class="stat-description">of data breaches involve phishing</span>
+            </div>
+            <div class="stat-box">
+                <span class="big-number">73 days</span>
+                <span class="stat-description">average time to contain a breach</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-envelope-open-text"></i> Phishing</h3>
+            <p>Deceptive messages that harvest access</p>
+            <div class="detail">36% of breaches involve phishing • Primary attack vector</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-lock"></i> Ransomware</h3>
+            <p>Data/encryption-based disruption</p>
+            <div class="detail">24% of breaches include ransomware • $1.76M avg. cost</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-key"></i> Credential Compromise</h3>
+            <p>Reused or leaked passwords</p>
+            <div class="detail">16% of breaches involve stolen credentials • Often undetected</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-link"></i> Supply-Chain & Vendor Risks</h3>
+            <p>Third-party exposure</p>
+            <div class="detail">15% of breaches involve third parties • Extended attack surface</div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Key Insight:</strong> Modern attacks are patient, persistent, and business-focused rather than opportunistic
+        </div>
+    </div>
+
+    <!-- Slide 4: Business Impact -->
+    <div class="print-page">
+        <h2>Business Impact Analysis</h2>
+
+        <div class="timeline">
+            <h3>Typical Incident Timeline</h3>
+            <div class="timeline-item">
+                <span class="timeline-duration">0-24 hours</span>
+                <span>Initial detection & response</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-duration">1-7 days</span>
+                <span>Containment & assessment</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-duration">1-4 weeks</span>
+                <span>Recovery & restoration</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-duration">1-6 months</span>
+                <span>Full business recovery</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-clock"></i> Operational Downtime</h3>
+            <p>Productivity loss and system unavailability</p>
+            <div class="detail">194 days avg. identification • 73 days containment</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-dollar-sign"></i> Financial Costs</h3>
+            <p>Recovery, remediation, potential fines</p>
+            <div class="detail">$4.88M avg. total cost • 51% from lost business value</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-users"></i> Reputation Effects</h3>
+            <p>Customer trust and brand impact</p>
+            <div class="detail">28% of organizations lose customers • Long-term brand impact</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-gavel"></i> Legal & Regulatory</h3>
+            <p>Compliance violations and penalties</p>
+            <div class="detail">GDPR: up to 4% revenue • Avg. $1.93M regulatory costs</div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Case Study:</strong> Healthcare organization experienced phishing attack leading to 45-day system recovery, $3.2M in total costs, and 18-month reputation recovery period.
+        </div>
+    </div>
+
+    <!-- Slide 5: Security Controls -->
+    <div class="print-page">
+        <h2>Security Control Framework</h2>
+
+        <div style="text-align: center; background: #f1f5f9; padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <strong>Common Frameworks:</strong> NIST Cybersecurity Framework • ISO 27001 • CIS Controls
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-shield-alt"></i> Identity & Access Management</h3>
+            <p>Who can access what, when, and how</p>
+            <div class="detail">Multi-factor authentication • Privileged access • Zero trust principles</div>
+            <div class="badge">📊 Prevents 99.9% of automated attacks</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-database"></i> Backup & Recovery</h3>
+            <p>Data protection and business continuity</p>
+            <div class="detail">3-2-1 backup rule • Regular testing • Recovery time objectives</div>
+            <div class="badge">📊 Reduces ransomware impact by 90%</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-chart-line"></i> Security Monitoring</h3>
+            <p>Continuous threat detection and response</p>
+            <div class="detail">SIEM/SOAR tools • 24/7 monitoring • Incident response plans</div>
+            <div class="badge">📊 Reduces detection time from 287 to 73 days</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-network-wired"></i> Network Security</h3>
+            <p>Infrastructure protection and segmentation</p>
+            <div class="detail">Firewalls • VPNs • Network segmentation • Zero trust architecture</div>
+            <div class="badge">📊 Limits breach scope by 60%</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-handshake"></i> Third-Party Risk</h3>
+            <p>Vendor security and supply chain protection</p>
+            <div class="detail">Due diligence • Contracts • Continuous monitoring • SLAs</div>
+            <div class="badge">📊 61% of breaches involve third parties</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-graduation-cap"></i> Security Awareness</h3>
+            <p>Human-focused security education</p>
+            <div class="detail">Regular training • Phishing simulations • Security culture</div>
+            <div class="badge">📊 Reduces human error incidents by 70%</div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Implementation Reality:</strong> Most effective when implemented as layered defense. Average implementation: 18-24 months for comprehensive program.
+        </div>
+    </div>
+
+    <!-- Slide 6: Strategic Framework -->
+    <div class="print-page">
+        <h2>Strategic Decision Framework</h2>
+
+        <h3>Cybersecurity Maturity Progression</h3>
+        <div class="maturity-row">
+            <div class="stage">
+                <div class="stage-number">1</div>
+                <strong>Reactive</strong>
+                <p>Respond to incidents</p>
+            </div>
+            <div class="stage">
+                <div class="stage-number">2</div>
+                <strong>Compliant</strong>
+                <p>Meet regulatory requirements</p>
+            </div>
+            <div class="stage">
+                <div class="stage-number">3</div>
+                <strong>Proactive</strong>
+                <p>Prevent and detect threats</p>
+            </div>
+            <div class="stage">
+                <div class="stage-number">4</div>
+                <strong>Adaptive</strong>
+                <p>Continuous improvement</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-bullseye"></i> Risk Assessment</h3>
+            <p>What are our critical assets and biggest vulnerabilities?</p>
+            <div class="detail">• Crown jewel analysis • Business impact assessment • Risk appetite definition</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-balance-scale"></i> Investment Strategy</h3>
+            <p>How do we balance security investment with business needs?</p>
+            <div class="detail">• ROI calculations • Risk-based budgeting • Phased implementation</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-chart-bar"></i> Success Metrics</h3>
+            <p>How do we measure cybersecurity effectiveness?</p>
+            <div class="detail">• Mean time to detection • Incident reduction • Compliance scores</div>
+        </div>
+
+        <div class="content-section">
+            <h3><i class="fas fa-users-cog"></i> Governance Model</h3>
+            <p>Who owns cybersecurity decisions and accountability?</p>
+            <div class="detail">• Executive oversight • Cross-functional teams • Clear responsibilities</div>
+        </div>
+
+        <h3 style="margin-top: 20px;">Immediate Next Steps</h3>
+        <div class="action-item">
+            <strong>Week 1-2:</strong> Conduct risk assessment and asset inventory
+        </div>
+        <div class="action-item">
+            <strong>Week 3-4:</strong> Define risk appetite and success metrics
+        </div>
+        <div class="action-item">
+            <strong>Month 2:</strong> Develop implementation roadmap and budget
+        </div>
+        <div class="action-item">
+            <strong>Month 3:</strong> Begin with highest-impact, lowest-cost controls
+        </div>
+    </div>
+
+    <!-- Slide 7: Resources -->
+    <div class="print-page">
+        <h2>Resources & References</h2>
+
+        <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+                <div class="content-section">
+                    <h3><i class="fas fa-book"></i> Frameworks & Standards</h3>
+                    <ul>
+                        <li><strong>NIST Cybersecurity Framework</strong> - Comprehensive security guidance</li>
+                        <li><strong>ISO 27001</strong> - International security management standard</li>
+                        <li><strong>CIS Controls</strong> - Prioritized security actions</li>
+                        <li><strong>COBIT</strong> - Governance and management framework</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3><i class="fas fa-chart-line"></i> Industry Reports</h3>
+                    <ul>
+                        <li><strong>IBM Cost of Data Breach Report 2024</strong></li>
+                        <li><strong>Verizon Data Breach Investigations Report</strong></li>
+                        <li><strong>Ponemon Institute Security Studies</strong></li>
+                        <li><strong>SANS Security Surveys</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="flex: 1;">
+                <div class="content-section">
+                    <h3><i class="fas fa-shield-alt"></i> Government Resources</h3>
+                    <ul>
+                        <li><strong>CISA.gov</strong> - US cybersecurity guidance and alerts</li>
+                        <li><strong>NCSC.gov.uk</strong> - UK cybersecurity advice</li>
+                        <li><strong>NIST.gov</strong> - Standards and best practices</li>
+                        <li><strong>FTC.gov</strong> - Business cybersecurity guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="blue-box">
+            <h3>Thank You</h3>
+            <p>Thank you for your time and attention. Cybersecurity is a journey, not a destination - every step toward better security posture makes a meaningful difference for your organization and the people you serve.</p>
+        </div>
+    </div>
+</body>
+</html>
