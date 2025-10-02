@@ -777,7 +777,11 @@
 
 @media (max-width: 768px) {
     .reveal .slides section {
-        padding: 1.5rem 2rem;
+        padding: 2rem 1.5rem 4rem 1.5rem;
+        min-height: calc(100vh - 120px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     /* Typography adjustments */
@@ -799,26 +803,46 @@
     }
     
     /* Title slide mobile */
+    .title-content {
+        padding: 2rem 0;
+    }
+    
     .title-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
     }
     
     .title-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
     }
     
     .subtitle {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+        line-height: 1.4;
+    }
+    
+    .presenter-info {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
     }
     
     .title-stats {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
         align-items: center;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
     }
     
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
     }
     
     /* Grid layouts to single column */
@@ -890,28 +914,62 @@
     
     /* Navigation controls mobile */
     .reveal .controls {
-        bottom: 80px !important;
-        right: 15px !important;
+        bottom: 100px !important;
+        right: 20px !important;
+        z-index: 200;
     }
     
     .reveal .controls button {
-        width: 44px !important;
-        height: 44px !important;
-        border-width: 1.5px !important;
+        width: 48px !important;
+        height: 48px !important;
+        border-width: 2px !important;
+        box-shadow: 0 4px 16px rgba(30, 64, 175, 0.4) !important;
     }
     
     /* Footer mobile */
     .slide-footer {
-        padding: 0 1rem;
-        font-size: 0.8rem;
-        flex-direction: column;
-        height: 60px;
-        justify-content: center;
-        gap: 0.25rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+        height: 70px;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .slide-footer .company-info {
+        font-size: 0.75rem;
+    }
+    
+    .slide-footer .slide-number {
+        font-size: 0.75rem;
     }
     
     .reveal .progress {
-        bottom: 60px !important;
+        bottom: 70px !important;
+        height: 3px !important;
+    }
+    
+    /* Content spacing mobile */
+    .key-insight,
+    .real-example,
+    .implementation-note {
+        margin: 1.5rem 0;
+        padding: 1.25rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Compact margins for mobile */
+    .reveal h2 {
+        margin-bottom: 1.25rem;
+    }
+    
+    .reveal h3 {
+        margin-bottom: 0.75rem;
     }
     
     /* Contact details mobile */
@@ -923,7 +981,13 @@
 
 @media (max-width: 480px) {
     .reveal .slides section {
-        padding: 1rem 1.5rem;
+        padding: 1.5rem 1rem 3.5rem 1rem;
+        min-height: calc(100vh - 100px);
+    }
+    
+    /* Even more compact title slide */
+    .title-content {
+        padding: 1.5rem 0;
     }
     
     /* Further reduce font sizes */
@@ -965,13 +1029,23 @@
     
     /* Navigation controls small mobile */
     .reveal .controls {
-        bottom: 70px !important;
-        right: 10px !important;
+        bottom: 90px !important;
+        right: 15px !important;
     }
     
     .reveal .controls button {
-        width: 40px !important;
-        height: 40px !important;
+        width: 44px !important;
+        height: 44px !important;
+    }
+    
+    /* Footer small mobile */
+    .slide-footer {
+        height: 60px;
+        padding: 0.5rem 1rem;
+    }
+    
+    .reveal .progress {
+        bottom: 60px !important;
     }
     
     /* Smaller icons */
@@ -998,6 +1072,24 @@
     }
 }
 
+/* Mobile-specific optimizations */
+@media screen and (max-width: 768px) {
+    /* Prevent zoom on input focus */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+    
+    /* Optimize viewport for mobile */
+    .reveal {
+        touch-action: pan-y;
+    }
+    
+    /* Better mobile scrolling */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 /* Touch-friendly interactive elements */
 @media (hover: none) and (pointer: coarse) {
     .agenda-item:hover,
@@ -1015,6 +1107,37 @@
     .framework-item:active {
         transform: scale(0.98);
         transition: transform 0.1s ease;
+    }
+}
+
+/* Safe area support for modern mobile devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    @media (max-width: 768px) {
+        .slide-footer {
+            padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+        }
+        
+        .reveal .controls {
+            bottom: calc(100px + env(safe-area-inset-bottom)) !important;
+        }
+        
+        .reveal .progress {
+            bottom: calc(70px + env(safe-area-inset-bottom)) !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .slide-footer {
+            padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+        }
+        
+        .reveal .controls {
+            bottom: calc(90px + env(safe-area-inset-bottom)) !important;
+        }
+        
+        .reveal .progress {
+            bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+        }
     }
 }
 
